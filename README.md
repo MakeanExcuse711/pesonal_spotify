@@ -1,8 +1,6 @@
-# Name（リポジトリ/プロジェクト/OSSなどの名前）
+# music_diary
 
-分かりやすくてカッコイイ名前をつける（今回は"hoge"という名前をつける）
-
-"hoge"が何かを簡潔に紹介する
+spotifyの履歴を表示し、コメントを付けたり検索したりcsvファイルを作ったりする一連のシステム
 
 # DEMO
 
@@ -41,19 +39,4 @@ python demo.py
 
 注意点などがあれば書く
 
-# Author
 
-作成情報を列挙する
-
-* 作成者
-* 所属
-* E-mail
-
-# License
-ライセンスを明示する
-
-"hoge" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
-
-社内向けなら社外秘であることを明示してる
-
-"hoge" is Confidential.
