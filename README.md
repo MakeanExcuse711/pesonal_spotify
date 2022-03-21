@@ -10,6 +10,8 @@ spotifyの履歴を表示し、コメントを付けたり検索したりcsvフ�
 
 "hoge"のセールスポイントや差別化などを説明する
 
+![スクリーンショット 2022-03-21 23 10 49](https://user-images.githubusercontent.com/95104894/159279844-be3b10a4-cf06-4d6f-8bed-04f1ebbd3914.png)
+
 # Requirement
 
 "hoge"を動かすのに必要なライブラリなどを列挙する
