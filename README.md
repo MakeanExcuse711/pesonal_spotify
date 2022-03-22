@@ -13,17 +13,17 @@ spotifyの履歴を表示し、コメントを付けたり検索したりcsvフ�
 
 # Requirement
 
-"hoge"を動かすのに必要なライブラリなどを列挙する
 
-* huga 3.5.2
-* hogehuga 1.0.2
+* PHP 7.3 or later.
+* PHP cURL extension (Usually included with PHP).
+
 
 # Installation
 
-Requirementで列挙したライブラリなどのインストール方法を説明する
+Install it using Composer:
 
 ```bash
-pip install huga_package
+composer require jwilsson/spotify-web-api-php
 ```
 
 # Usage
