@@ -4,7 +4,7 @@ spotifyの履歴を表示し、コメントを付けたり検索したりcsvフ�
 
 # DEMO
 
-https://user-images.githubusercontent.com/95104894/159406763-f601baa5-4abf-4a1a-8fc6-fc67f7efde8d.png
+![名称未設定 drawio (1)](https://user-images.githubusercontent.com/95104894/159476987-4291191b-dfab-4334-a9cc-19592c034ca3.png)
 # Features
 
 "hoge"のセールスポイントや差別化などを説明する
