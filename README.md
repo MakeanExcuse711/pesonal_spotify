@@ -4,8 +4,7 @@ spotifyの履歴を表示し、コメントを付けたり検索したりcsvフ�
 
 # DEMO
 
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
-
+https://user-images.githubusercontent.com/95104894/159406763-f601baa5-4abf-4a1a-8fc6-fc67f7efde8d.png
 # Features
 
 "hoge"のセールスポイントや差別化などを説明する
