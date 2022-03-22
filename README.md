@@ -35,7 +35,7 @@ composer require jwilsson/spotify-web-api-php
 
 # Usage
 spotify.apiに接続するためには使用者のspotifyidとseceret_codeが必要。
-index.phpに入力する。　　
+index.phpに入力する。　　　
 index.phpを起動すれば自動的にhome.phpの画面に繋がる。
 
 # Note
