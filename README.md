@@ -6,8 +6,12 @@ spotifyの履歴を表示し、コメントを付けたり検索したりcsvフ�
 
 ![名称未設定 drawio (1)](https://user-images.githubusercontent.com/95104894/159476987-4291191b-dfab-4334-a9cc-19592c034ca3.png)
 # Features
+spotify再生履歴からartist情報と曲情報を取り出して、sqlに保存する。
+それぞれの曲にコメントを打つことができその情報を保存する。
+保存した曲情報を検索できる。曲名とアーティスト名から検索でき、部分一致で検索する。
+それぞれの曲情報をサイトから削除することができる。
+sqlの情報をcsｖファイルにして出力することができる。出力時に最大出力数を１０件と３０件に設定することができる。
 
-![スクリーンショット 2022-03-21 23 10 49](https://user-images.githubusercontent.com/95104894/159279844-be3b10a4-cf06-4d6f-8bed-04f1ebbd3914.png)
 
 # 使ったもの
 
@@ -26,13 +30,7 @@ composer require jwilsson/spotify-web-api-php
 
 # Usage
 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
-
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
+index.phpを起動すれば自動的にhome.phpの画面に繋がる。
 
 # Note
 
