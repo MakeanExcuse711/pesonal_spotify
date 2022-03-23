@@ -1,9 +1,9 @@
 <?php
     require 'vendor/autoload.php';
     $session = new SpotifyWebAPI\Session(
-        'e8112c7866dc4dcab2bb8b5a179c027a',
-        '1c5ba3aad5964bfa828875ad33fa8145',
-        'http://localhost/spotify/index5.php'
+        '"your_id"',
+        '"secret_id"',
+        'http://localhost/spotify/index.php'
     ); 
     $api = new SpotifyWebAPI\SpotifyWebAPI();
 
