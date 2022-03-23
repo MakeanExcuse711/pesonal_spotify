@@ -7,7 +7,6 @@ define( 'DB_PASS', 'root');
 define( 'DB_NAME', 'ik');
 
 $current_date = null;
-$view_name = null;
 $message = array();
 $message_data = null;
 $error_message = array();
@@ -30,8 +29,6 @@ try {
     $pdo = new PDO('mysql:charset=UTF8;dbname='.DB_NAME.';host='.DB_HOST , DB_USER, DB_PASS, $option);
 
 } catch(PDOException $e) {
-    // 接続エラーのときエラー内容を取得する
-    //$error_message[] = $e->getMessage();
 }
 
 if( !empty($_GET['message_id']&& empty($_POST['message_id'])) ) {
@@ -49,18 +46,15 @@ if( !empty($_GET['message_id']&& empty($_POST['message_id'])) ) {
 
 	// 投稿データが取得できないときは管理ページに戻る
 	if( empty($message_data) ) {
-		header("Location: ./port.php");
+		header("Location: ./home.php");
 		exit;
 	}
 
 
 }elseif(!empty($_POST['message_id'])){
     	// 空白除去
-	//$view_name = preg_replace( '/\A[\p{C}\p{Z}]++|[\p{C}\p{Z}]++\z/u', '', $_POST['view_name']);
 	$message = preg_replace( '/\A[\p{C}\p{Z}]++|[\p{C}\p{Z}]++\z/u', '', $_POST['message']);
 
-
-	// メッセージの入力チェック
 
 	if( empty($error_message) ) {
 
@@ -91,7 +85,7 @@ if( !empty($_GET['message_id']&& empty($_POST['message_id'])) ) {
 
 		// 更新に成功したら一覧に戻る
 		if( $res ) {
-			header("Location: ./port.php");
+			header("Location: ./home.php");
 			exit;
 		}
 
@@ -147,64 +141,12 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
-nav ul {
-    list-style:none;
-}
-
-blockquote, q {
-    quotes:none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content:'';
-    content:none;
-}
-
 a {
     margin:0;
     padding:0;
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
-}
-
-/* change colours to suit your needs */
-ins {
-    background-color:#ff9;
-    color:#000;
-    text-decoration:none;
-}
-
-/* change colours to suit your needs */
-mark {
-    background-color:#ff9;
-    color:#000;
-    font-style:italic;
-    font-weight:bold;
-}
-
-del {
-    text-decoration: line-through;
-}
-
-abbr[title], dfn[title] {
-    border-bottom:1px dotted;
-    cursor:help;
-}
-
-table {
-    border-collapse:collapse;
-    border-spacing:0;
-}
-
-hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
 }
 
 input, select {
@@ -229,9 +171,6 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 h1 {
 	margin-bottom: 30px;
@@ -261,9 +200,6 @@ textarea {
     background: #fff;
 }
 
-input[type="text"] {
-	width: 200px;
-}
 textarea {
 	width: 50%;
 	max-width: 50%;
@@ -282,109 +218,14 @@ input[type="submit"] {
     background-color: #37a1e5;
 }
 
-input[type="edit"] {
-	appearance: none;
-    -webkit-appearance: none;
-    padding: 10px 20px;
-    color: #007edf;
-    font-size: 86%;
-    line-height: 1.0em;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-
-    outline: none;
-}
-
-input[type=submit]:hover,
-button:hover {
-    background-color: #2392d8;
-}
-
-hr {
-	margin: 20px 0;
-	padding: 0;
-}
-
-.success_message {
-    margin-bottom: 20px;
-    padding: 10px;
-    color: #48b400;
-    border-radius: 10px;
-    border: 1px solid #4dc100;
-}
-
-.error_message {
-    margin-bottom: 20px;
-    padding: 10px;
-    color: #ef072d;
-    list-style-type: none;
-    border-radius: 10px;
-    border: 1px solid #ff5f79;
-}
-
-.success_message,
-.error_message li {
-    font-size: 86%;
-    line-height: 1.6em;
-}
-
-
 /*-----------------------------------
 掲示板エリア
 -----------------------------------*/
-
-article {
-	margin-top: 20px;
-	padding: 20px;
-	border-radius: 10px;
-	background: #fff;
-}
-article.reply {
-    position: relative;
-    margin-top: 15px;
-    margin-left: 30px;
-}
-article.reply::before {
-    position: absolute;
-    top: -10px;
-    left: 20px;
-    display: block;
-    content: "";
-    border-top: none;
-    border-left: 7px solid #f7f7f7;
-    border-right: 7px solid #f7f7f7;
-    border-bottom: 10px solid #fff;
-}
-	.info {
-		margin-bottom: 10px;
-	}
-	.info h2 {
-		display: inline-block;
-		margin-right: 10px;
-		color: #222;
-		line-height: 1.6em;
-		font-size: 86%;
-	}
-	.info time {
-		color: #999;
-		line-height: 1.6em;
-		font-size: 72%;
-	}
-    article p {
-        color: #555;
-        font-size: 86%;
-        line-height: 1.6em;
-    }
 
 @media only screen and (max-width: 1000px) {
 
     body {
         padding: 30px 5%;
-    }
-
-    input[type="text"] {
-        width: 100%;
     }
     textarea {
         width: 100%;
@@ -413,13 +254,11 @@ article.reply::before {
        
 
 	</div>
-    <a class="btn_cancel" href="port.php">キャンセル</a>
+    <a class="btn_cancel" href="home.php">キャンセル</a>
     <input type="submit" name="btn_submit" value="更新">
 	<input type="hidden" name="message_id" value="<?php if( !empty($message_data['id']) ){ 
         echo $message_data['id']; }elseif( !empty($_POST['message_id']) ){ echo htmlspecialchars( $_POST['message_id'], ENT_QUOTES, 'UTF-8'); }?>">
 </form>
-<hr>
-<iframe src="https://p.scdn.co/mp3-preview/27a371dcc78177cdec0b83450ddd49b00c7acf40?cid=e8112c7866dc4dcab2bb8b5a179c027a" width="350" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
 <section>
 
 </section>

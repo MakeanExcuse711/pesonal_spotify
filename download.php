@@ -38,8 +38,8 @@ if( !empty($_GET['limit']) ) {
         // メッセージのデータを取得する
 		if( !empty($limit) ) {
 
-			// SQL作成
-			$stmt = $pdo->prepare("SELECT * FROM spotif ORDER BY id ASC LIMIT :limit");
+			// SQL作成 //投稿日時順に表示する
+			$stmt = $pdo->prepare("SELECT * FROM spotif ORDER BY post_date DESC LIMIT :limit");
 
 			// 値をセット
 			$stmt->bindValue( ':limit', $_GET['limit'], PDO::PARAM_INT);
@@ -59,7 +59,7 @@ if( !empty($_GET['limit']) ) {
 	} catch(PDOException $e) {
 
 		// 管理者ページへリダイレクト
-		header("Location: ./port.php");
+		header("Location: ./home.php");
 		exit;
 	}
 

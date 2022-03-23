@@ -1,8 +1,8 @@
 <?php
     require 'vendor/autoload.php';
     $session = new SpotifyWebAPI\Session(
-        '"my_id"',
-        '"secret_id"',
+        'e8112c7866dc4dcab2bb8b5a179c027a',
+        '1c5ba3aad5964bfa828875ad33fa8145',
         'http://localhost/spotify/index5.php'
     ); 
     $api = new SpotifyWebAPI\SpotifyWebAPI();
@@ -10,16 +10,7 @@
     if (isset($_GET['code'])) {
         $session->requestAccessToken($_GET['code']);
         $api->setAccessToken($session->getAccessToken());
-        $top = $api->getMyRecentTracks('tracks', ['limit' => 4]);
-        //ここをgetauthrizedに変える
-        //こっから名前を取り出したい
-        //idのようにやればできそう
-        $id_place = [];
-          //曲名の長さを調べたい
-        
-        $object = json_encode($top);
-        $needle = 'name';
-        $offset2 = 0;
+        $top = $api->getMyRecentTracks('tracks', ['limit' => 10]);
     
         echo '<pre>';
         //print_r($top);
@@ -56,9 +47,8 @@
         print_r($items->track->album->artists[0]->name);
         $artist_name[$n] = $items->track->album->artists[0]->name;
         echo "\n";
-        print_r($items->track->preview_url);
+        //print_r($items->track->preview_url);
         $url[$n] =  $items->track->preview_url;
-        echo "\n";
         write($track_name[$n],$artist_name[$n],$url[$n]);
   
         }else{
@@ -71,7 +61,7 @@
         print_r($items->track->album->artists[0]->name);
         $artist_name[$n] = $items->track->album->artists[0]->name;
         echo "\n";
-        print_r($items->track->preview_url);
+        //print_r($items->track->preview_url);
         $url[$n] =  $items->track->preview_url;
         write($track_name[$n],$artist_name[$n],$url[$n]);
 
@@ -88,4 +78,4 @@
         header('Location: ' . $session->getAuthorizeUrl($scope));
         die();
     }
-    header("Location:./port.php");
+    header("Location:./home.php");
