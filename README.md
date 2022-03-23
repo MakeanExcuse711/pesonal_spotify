@@ -1,4 +1,4 @@
-# music_diary
+# music_d
 
 spotifyの履歴を表示し、コメントを付けたり検索したりcsvファイルを作ったりする一連のシステム
 
